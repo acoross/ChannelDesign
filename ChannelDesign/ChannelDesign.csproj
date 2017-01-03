@@ -45,15 +45,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChannelSystem.cs" />
-    <Compile Include="ChatServer.cs" />
-    <Compile Include="ChatSocket.cs" />
+    <Compile Include="Chat\ChattingChannel.cs" />
+    <Compile Include="Lib\SyncedChannel\SyncedChannel.cs" />
+    <Compile Include="Chat\ChatServer.cs" />
+    <Compile Include="Chat\ChatSocket.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\extern\synchronizer\src\Synchronizer\Synchronizer.csproj">
+      <Project>{7415cf18-6554-4d17-b20a-711205bca06b}</Project>
+      <Name>Synchronizer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

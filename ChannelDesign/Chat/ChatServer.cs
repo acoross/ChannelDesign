@@ -8,7 +8,7 @@ namespace ChannelDesign
 {
     class ChatServer
     {
-        public readonly ChannelContainer channels = new ChannelContainer();
+        public ChattingChannelSystem chatSystem { get; } = new ChattingChannelSystem();
 
         public ChatServer()
         {
@@ -17,9 +17,9 @@ namespace ChannelDesign
                 
             }
 
-            void OnSocketDisconnected(ChatSocket socket)
+            async Task OnSocketDisconnected(ChatSocket socket)
             {
-                socket.OnDisconnected();
+                await socket.OnDisconnected();
             }
         }
     }
